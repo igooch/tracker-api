@@ -7,11 +7,11 @@ const statuses = ['New', 'Assigned', 'Fixed', 'Closed'];
 const initialCount = db.issues.count();
 
 for (let i = 0; i < 100; i += 1) {
-  const randomCreateDate = (new Date())
-  - Math.floor(Math.random() * 60) * 1000 * 60 * 60 * 24;
-  const created = new Date(randomCreateDate);
+  const randomCreatedDate = (new Date())
+    - Math.floor(Math.random() * 60) * 1000 * 60 * 60 * 24;
+  const created = new Date(randomCreatedDate);
   const randomDueDate = (new Date())
-  - Math.floor(Math.random() * 60) * 1000 * 60 * 60 * 24;
+    - Math.floor(Math.random() * 60) * 1000 * 60 * 60 * 24;
   const due = new Date(randomDueDate);
 
   const owner = owners[Math.floor(Math.random() * 5)];
@@ -27,7 +27,7 @@ for (let i = 0; i < 100; i += 1) {
   db.issues.insertOne(issue);
 }
 
-const count = db.issue.count();
-db.counter.update({ _id: 'issues' }, { $set: { current: count } });
+const count = db.issues.count();
+db.counters.update({ _id: 'issues' }, { $set: { current: count } });
 
-print('New issue count: ', count);
+print('New issue count:', count);
