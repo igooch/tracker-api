@@ -4,8 +4,8 @@ const { MongoClient } = require('mongodb');
 let db;
 
 async function connectToDb() {
-  const url = process.env.MONGO_URI
-    || 'mongodb://igooch:74wOFITnYFqQHN6S@ds113785.mlab.com:13785/heroku_sgcdw4dg';
+  const url = process.env.MONGODB_URI
+    || 'mongodb://heroku_sgcdw4dg:chq51p4nig1hdkj51vns61qlh4@ds113785.mlab.com:13785/heroku_sgcdw4dg';
   const client = new MongoClient(url, { useNewUrlParser: true });
   await client.connect();
   console.log('Connected to MongoDB at', url);
