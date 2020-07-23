@@ -1,4 +1,4 @@
-const { mustBeSignedIn }  = require('./auth.js');
+const { mustBeSignedIn } = require('./auth.js');
 
 let aboutMessage = 'Issue Tracker API v1.0';
 
